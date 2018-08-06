@@ -6,18 +6,18 @@ if (operator == "+")
 {
   alert(parseInt(num1) + parseInt(num2));
 }
-
-if (operator == "-")
+else if (operator == "-")
 {
   alert(parseInt(num1) - parseInt(num2));
 }
-
-if (operator == "*")
+else if (operator == "*")
 {
   alert(parseInt(num1) * parseInt(num2));
 }
-
-if (operator == "/")
+else if (operator == "/")
 {
   alert(parseInt(num1) / parseInt(num2));
+}
+else {
+  alert("This is not a valid operation, please refresh and try again");
 }
