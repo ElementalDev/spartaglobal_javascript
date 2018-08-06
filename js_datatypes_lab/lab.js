@@ -38,3 +38,7 @@ var sentence_length = sentence.length;
 
 var person = { "name":first_name, "friends":names_array, "age":age,
 "phone_number":phone_number, "best_friend":friend, "quote":sentence };
+
+var jsonString = JSON.stringify(person);
+
+console.log(jsonString);
