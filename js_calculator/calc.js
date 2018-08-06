@@ -4,4 +4,20 @@ var num2 = prompt("Please insert your second number");
 
 if (operator == "+")
 {
+  alert(parseInt(num1) + parseInt(num2));
+}
+
+if (operator == "-")
+{
+  alert(parseInt(num1) - parseInt(num2));
+}
+
+if (operator == "*")
+{
+  alert(parseInt(num1) * parseInt(num2));
+}
+
+if (operator == "/")
+{
+  alert(parseInt(num1) / parseInt(num2));
 }
