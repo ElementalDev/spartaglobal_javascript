@@ -1,2 +1,3 @@
 # JavaScript-Intro
-Introduction to JS
+
+This is my introduction to JavaScript programming, using it to implement different behaviours in HTML elements
