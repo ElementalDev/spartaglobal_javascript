@@ -64,6 +64,7 @@ function BasicCalc() {
   alert(result);
 }
 
+//This function is the advanced calculator
 function AdvCalc() {
   var operation = prompt("What operation would you like to perform? (pow or sqrt)");
   var num1 = 0;
@@ -85,6 +86,15 @@ function AdvCalc() {
     alert("This is not an operation, please refresh and try again.");
   }
   alert(result);
+}
+
+//This function is the BMI calculator
+function BMICalc() {
+  var weight = parseFloat(prompt("What is your weight in kg?"));
+  var height = parseFloat(prompt("What is your height in cm?"));
+  var result = CalcBMI(weight, height);
+
+  alert("Your BMI is: "result);
 }
 
 //This function performs addition
