@@ -1,11 +1,8 @@
-function main() {
-  }
-  do {
+do {
     alert("Please choose the type of calculator you would like to use.");
     CalcMenu()
 
-  } while(useAgain == true)
-}
+} while(useAgain == true)
 
 //This is the menu of the calculator. The parameter determines whether the user wants to play or not?
 function CalcMenu() {
@@ -57,9 +54,4 @@ function PowerOf(number1, powerOf) {
 //This function performs square root operations
 function SquareRoot(number1) {
   return Math.sqrt(number1)
-}
-
-//This function is the BMI calculator. It uses weight in kilograms and height in centimeters squared
-function BMICalc(weightKg, heightCm) {
-  return
 }
