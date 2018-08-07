@@ -53,5 +53,10 @@ function PowerOf(number1, powerOf) {
 
 //This function performs square root operations
 function SquareRoot(number1) {
-  return Math.sqrt(number1)
+  return Math.sqrt(number1);
+}
+
+//This function is the BMI calculator. It uses weight in kilograms and height in centimeters squared
+function CalcBMI(weightKg, heightCm) {
+  return weightKg * (Math.pow(heightCm, 2));
 }
