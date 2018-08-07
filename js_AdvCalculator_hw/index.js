@@ -64,6 +64,29 @@ function BasicCalc() {
   alert(result);
 }
 
+function AdvCalc() {
+  var operation = prompt("What operation would you like to perform? (pow or sqrt)");
+  var num1 = 0;
+  var num2 = 0;
+  var result = 0;
+
+  if (operation == "pow")
+  {
+    num = parseFloat(prompt("Number: "));
+    pow = parseFloat(prompt("To the power of: "));
+    result = powerOf(num, pow);
+  }
+  else if (operation == "-")
+  {
+    num = parseFloat(prompt("Number: "));
+    result = SquareRoot(num);
+  }
+  else {
+    alert("This is not an operation, please refresh and try again.");
+  }
+  alert(result);
+}
+
 //This function performs addition
 function Addition(number1, number2) {
   return number1 + number2
