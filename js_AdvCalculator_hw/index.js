@@ -75,12 +75,12 @@ function AdvCalc() {
   {
     num = parseFloat(prompt("Number: "));
     pow = parseFloat(prompt("To the power of: "));
-    result = PowerOf(num, pow);
+    result = PowerOf(num, pow); //Takes the number and multiplys it by itself <power> amount of times
   }
-  else if (operation == "-")
+  else if (operation == "sqrt")
   {
     num = parseFloat(prompt("Number: "));
-    result = SquareRoot(num);
+    result = SquareRoot(num); //Square roots the number
   }
   else {
     alert("This is not an operation, please refresh and try again.");
