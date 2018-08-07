@@ -17,7 +17,7 @@ function CalcMenu() {
       AdvCalc();
       break;
     case "I":
-      bmiCalc();
+      BMICalc();
       break;
     case "T":
       tripCalc();
@@ -75,7 +75,7 @@ function AdvCalc() {
   {
     num = parseFloat(prompt("Number: "));
     pow = parseFloat(prompt("To the power of: "));
-    result = powerOf(num, pow);
+    result = PowerOf(num, pow);
   }
   else if (operation == "-")
   {
@@ -94,9 +94,8 @@ function BMICalc() {
   var height = parseFloat(prompt("What is your height in cm?"));
   var result = CalcBMI(weight, height);
 
-  alert("Your BMI is: "result);
+  alert("Your BMI is: " + result);
 }
-
 //This function performs addition
 function Addition(number1, number2) {
   return number1 + number2
