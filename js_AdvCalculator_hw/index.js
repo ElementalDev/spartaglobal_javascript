@@ -90,12 +90,32 @@ function AdvCalc() {
 
 //This function is the BMI calculator
 function BMICalc() {
-  var weight = parseFloat(prompt("What is your weight in kg?"));
-  var height = parseFloat(prompt("What is your height in cm?"));
-  var result = CalcBMI(weight, height);
+  var measurementType = prompt("Metric or Imperial? (imp/met)");
+  var weight = parseFloat(prompt("What is your weight (imp: lbs | met: kg)?"));
+  var height = parseFloat(prompt("What is your height? (imp: ins | met: m)"));
+  var result = 0;
+  var category = ["Underweight", "Normal", "Overweight", "Obese"];
+
+  alert("Please note that BMI is a guideline and doesn't take muscle mass into account when working out category");
+
+  result = CalcBMI(weight, height, measurementType);
 
   alert("Your BMI is: " + result);
+
+  if (result >= 16 && result < 18.5) {
+    alert(category[0]);
+  }
+  else if (result >= 18.5 && result < 25) {
+    alert(category[1]);
+  }
+  else if (result >= 25  && result < 30) {
+    alert(category[2]);
+  }
+  else if (result > 35) {
+    alert(category[3]);
+  }
 }
+
 //This function performs addition
 function Addition(number1, number2) {
   return number1 + number2
@@ -126,9 +146,15 @@ function SquareRoot(number1) {
   return Math.sqrt(number1);
 }
 
-//This function is the BMI calculator. It uses weight in kilograms and height in centimeters squared
-function CalcBMI(weightKg, heightCm) {
-  return weightKg * (Math.pow(heightCm, 2));
+//This function is the BMI calculator.
+function CalcBMI(weight, height, measurementType) {
+
+  if (measurementType == "met") {
+    return weight / (Math.pow(height, 2));
+  }
+  else if (measurementType == "imp") {
+    return 703 * (weight / (Math.pow(height, 2)))
+  }
 }
 
 function useAgain() {
@@ -140,7 +166,11 @@ function useAgain() {
   }
   else if (choice == "n") {
     return false;
-  } else {
+  }
+  else if (choice == null) {
+    return false;
+  }
+  else {
     alert("This is not an option. Please refresh and try again")
   }
 }
