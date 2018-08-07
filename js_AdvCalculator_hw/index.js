@@ -158,10 +158,9 @@ function CalcBMI(weight, height, measurementType) {
 }
 
 function useAgain() {
-  var choice = prompt("Would you like to use BAIT Calculator again? (y/n)")
+  var choice = prompt("Would you like to use BAIT Calculator again? (y/n)");
 
-  if (choice == "y")
-  {
+  if (choice == "y"){
     return true;
   }
   else if (choice == "n") {
