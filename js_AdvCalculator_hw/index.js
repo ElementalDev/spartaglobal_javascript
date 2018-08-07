@@ -2,7 +2,6 @@ do {
     alert("Please choose the type of calculator you would like to use.");
     CalcMenu();
     var userChoice = useAgain();
-
 } while(userChoice == true)
 
 //This is the menu of the calculator. The parameter determines whether the user wants to play or not?
@@ -23,8 +22,46 @@ function CalcMenu() {
     case "T":
       tripCalc();
       break;
-    default: throw alert("This is not an option, Please refresh and try again");
+    default: alert("This is not an option. Please try again.");
   }
+}
+
+//This function is the basic calculator
+function BasicCalc() {
+
+  var operation = prompt("What operation would you like to perform? (+-*/)");
+  var num1 = 0;
+  var num2 = 0;
+  var result = 0;
+
+  if (operation == "+")
+  {
+    num1 = parseFloat(prompt("First Number: "));
+    num2 = parseFloat(prompt("Second Number: "));
+    result = Addition(num1, num2);
+  }
+  else if (operation == "-")
+  {
+    num1 = parseFloat(prompt("First Number: "));
+    num2 = parseFloat(prompt("Second Number: "));
+    result = Subtract(num1, num2);
+  }
+  else if (operation == "*")
+  {
+    num1 = parseFloat(prompt("First Number: "));
+    num2 = parseFloat(prompt("Second Number: "));
+    result = Multiply(num1, num2);
+  }
+  else if (operation == "/")
+  {
+    num1 = parseFloat(prompt("First Number: "));
+    num2 = parseFloat(prompt("Second Number: "));
+    result = Divide(num1, num2);
+  }
+  else {
+    alert("This is not an operation, please refresh and try again.");
+  }
+  alert(result);
 }
 
 //This function performs addition
