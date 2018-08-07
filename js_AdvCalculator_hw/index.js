@@ -117,6 +117,7 @@ function BMICalc() {
   }
 }
 
+//This function is the trip calculator
 function TripCalc() {
   var distance = parseFloat(prompt("How far have you got to go? (miles)"));
   var efficiency = parseFloat(prompt("How efficient is your vehicle? (mpg)"));
