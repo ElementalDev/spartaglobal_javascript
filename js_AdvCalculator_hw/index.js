@@ -1,8 +1,9 @@
 do {
     alert("Please choose the type of calculator you would like to use.");
-    CalcMenu()
+    CalcMenu();
+    var userChoice = useAgain();
 
-} while(useAgain == true)
+} while(userChoice == true)
 
 //This is the menu of the calculator. The parameter determines whether the user wants to play or not?
 function CalcMenu() {
@@ -59,4 +60,18 @@ function SquareRoot(number1) {
 //This function is the BMI calculator. It uses weight in kilograms and height in centimeters squared
 function CalcBMI(weightKg, heightCm) {
   return weightKg * (Math.pow(heightCm, 2));
+}
+
+function useAgain() {
+  var choice = prompt("Would you like to use BAIT Calculator again? (y/n)")
+
+  if (choice == "y")
+  {
+    return true;
+  }
+  else if (choice == "n") {
+    return false;
+  } else {
+    alert("This is not an option. Please refresh and try again")
+  }
 }
