@@ -98,10 +98,11 @@ function BMICalc() {
 
   alert("Please note that BMI is a guideline and doesn't take muscle mass into account when working out category");
 
-  result = CalcBMI(weight, height, measurementType);
+  result = BMIWorking(weight, height, measurementType);
 
   alert("Your BMI is: " + result);
 
+  // Selects category based on BMI result. Information based on average guidelines
   if (result >= 16 && result < 18.5) {
     alert(category[0]);
   }
@@ -147,7 +148,7 @@ function SquareRoot(number1) {
 }
 
 //This function is the BMI calculator.
-function CalcBMI(weight, height, measurementType) {
+function BMIWorking(weight, height, measurementType) {
 
   if (measurementType == "met") {
     return weight / (Math.pow(height, 2));
@@ -156,6 +157,33 @@ function CalcBMI(weight, height, measurementType) {
     return 703 * (weight / (Math.pow(height, 2)))
   }
 }
+
+function tripWorking(distance, efficiency, cost_per_gallon, speed) {
+
+  const LTRS_IN_GLN = 4.54609188;
+  var time = 0.0;
+  var cost = 0.0;
+  var mpgDiff = 0.0;
+
+  if(speed <= 60){
+    time = distance / speed; // Formula for time in hours
+    cost = (distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100; // Formula for cost
+  }
+  else if (speed > 60) { // Every 1 mph over 60, take away 2 mpg
+    mpgDiff = speed - 60;
+    for (var i = 0; i <= mpgDiff; i++) {
+      efficiency -= 2;
+      if (efficiency <= 0) {
+        alert("This is too fast, please try again!");
+      }
+    }
+    time = distance / speed; // Formula for time in hours
+    cost = (distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100; // Formula for cost
+  }
+
+  alert("Your trip will take " + time + " hours and cost £" + cost);
+}
+
 
 function useAgain() {
   var choice = prompt("Would you like to use BAIT Calculator again? (y/n)");
