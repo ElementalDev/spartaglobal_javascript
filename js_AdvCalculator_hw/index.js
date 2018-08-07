@@ -20,7 +20,7 @@ function CalcMenu() {
       BMICalc();
       break;
     case "T":
-      tripCalc();
+      TripCalc();
       break;
     default: alert("This is not an option. Please try again.");
   }
@@ -117,6 +117,16 @@ function BMICalc() {
   }
 }
 
+function TripCalc() {
+  var distance = parseFloat(prompt("How far have you got to go? (miles)"));
+  var efficiency = parseFloat(prompt("How efficient is your vehicle? (mpg)"));
+  var costpg = parseFloat(prompt("What is your cost per gallon? (pence)"));
+  var milesph = parseFloat(prompt("What will your average speed be? (mph)"));
+
+  TripWorking(distance, efficiency, costpg, milesph);
+
+}
+
 //This function performs addition
 function Addition(number1, number2) {
   return number1 + number2
@@ -158,7 +168,7 @@ function BMIWorking(weight, height, measurementType) {
   }
 }
 
-function tripWorking(distance, efficiency, cost_per_gallon, speed) {
+function TripWorking(distance, efficiency, cost_per_gallon, speed) {
 
   const LTRS_IN_GLN = 4.54609188;
   var time = 0.0;
@@ -166,8 +176,8 @@ function tripWorking(distance, efficiency, cost_per_gallon, speed) {
   var mpgDiff = 0.0;
 
   if(speed <= 60){
-    time = distance / speed; // Formula for time in hours
-    cost = (distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100; // Formula for cost
+    time = Math.round(((distance / speed) * 100) / 100); // Formula for time in hours
+    cost = ((((distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100); // Formula for cost
   }
   else if (speed > 60) { // Every 1 mph over 60, take away 2 mpg
     mpgDiff = speed - 60;
@@ -177,13 +187,11 @@ function tripWorking(distance, efficiency, cost_per_gallon, speed) {
         alert("This is too fast, please try again!");
       }
     }
-    time = distance / speed; // Formula for time in hours
-    cost = (distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100; // Formula for cost
+    time = Math.round(((distance / speed) * 100) / 100); // Formula for time in hours
+    cost = ((((distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100); // Formula for cost
   }
-
-  alert("Your trip will take " + time + " hours and cost £" + cost);
+    alert("Your trip will take " + time + " hours and cost £" + cost);
 }
-
 
 function useAgain() {
   var choice = prompt("Would you like to use BAIT Calculator again? (y/n)");
