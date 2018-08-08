@@ -1,15 +1,16 @@
+//This loops through the program until the user says they don't want to use it again.
 do {
     alert("Please choose the type of calculator you would like to use.");
-    CalcMenu();
-    var userChoice = useAgain();
+    CalcMenu(); //This calls the menu function
+    var userChoice = useAgain(); //This asks the user if they would like to use the calculator again.
 } while(userChoice == true)
 
 //This is the menu of the calculator. The parameter determines whether the user wants to play or not?
 function CalcMenu() {
   var option = prompt("(B)Basic | (A)Advanced | (I)BMI | (T)Trip")
 
-  option = option[0];
-  option = option.toLowerCase();
+  option = option[0]; //Takes the first letter of whatever the user inputs
+  option = option.toLowerCase(); //Turns the user input into lower case letters
 
   //Takes the users input and directs the code to the relevant function
   switch (option) {
@@ -32,11 +33,12 @@ function CalcMenu() {
 //This function is the basic calculator
 function BasicCalc() {
 
-  var operation = prompt("What operation would you like to perform? (+-*/)");
+  var operation = prompt("What operation would you like to perform? (+-*/)"); //Asks the user which operation they want to use
   var num1 = 0;
   var num2 = 0;
   var result = 0;
 
+  //Asks user for input on which numbers they would like to evaluate
   if (operation == "+")
   {
     num1 = parseFloat(prompt("First Number: "));
@@ -93,19 +95,19 @@ function AdvCalc() {
 
 //This function is the BMI calculator
 function BMICalc() {
-  var measurementType = prompt("Metric or Imperial? (imp/met)");
+  var measurementType = prompt("Metric or Imperial? (imp/met)"); //Imperial = inches and lbs | Metric = meters and kgs
   var weight = parseFloat(prompt("What is your weight (imp: lbs | met: kg)?"));
   var height = parseFloat(prompt("What is your height? (imp: ins | met: m)"));
   var result = 0;
-  var category = ["Underweight", "Normal", "Overweight", "Obese"];
+  var category = ["Underweight", "Normal", "Overweight", "Obese"]; //Array of BMI categories
 
   alert("Please note that BMI is a guideline and doesn't take muscle mass into account when working out category");
 
-  result = BMIWorking(weight, height, measurementType);
+  result = BMIWorking(weight, height, measurementType); //Calls function tha calculates BMI
 
   alert("Your BMI is: " + result);
 
-  // Selects category based on BMI result. Information based on average guidelines
+  //Selects category based on BMI result. Information based on average guidelines
   if (result >= 16 && result < 18.5) {
     alert(category[0]);
   }
@@ -122,12 +124,13 @@ function BMICalc() {
 
 //This function is the trip calculator
 function TripCalc() {
+  //Asks for all required input to be able to perform the calculation
   var distance = parseFloat(prompt("How far have you got to go? (miles)"));
   var efficiency = parseFloat(prompt("How efficient is your vehicle? (mpg)"));
   var costpg = parseFloat(prompt("What is your cost per gallon? (pence)"));
   var milesph = parseFloat(prompt("What will your average speed be? (mph)"));
 
-  TripWorking(distance, efficiency, costpg, milesph);
+  TripWorking(distance, efficiency, costpg, milesph); //Calls function that performs trip calculation
 
 }
 
