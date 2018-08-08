@@ -1,4 +1,4 @@
-//This loops through the program until the user says they don't want to use it again.
+//This loops through the program until the user says they don't want to use it again. Equivalent to Main method
 do {
     alert("Please choose the type of calculator you would like to use.");
     CalcMenu(); //This calls the menu function
@@ -177,21 +177,20 @@ function BMIWorking(weight, height, measurementType) {
 
 function TripWorking(distance, efficiency, cost_per_gallon, speed) {
 
-  const LTRS_IN_GLN = 4.54609188;
   var time = 0.0;
   var cost = 0.0;
   var mpgDiff = 0.0;
 
   if(speed <= 60){
-    time = Math.round(distance / speed); // Formula for time in hours
-    cost = ((((distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100); // Formula for cost
+    time = Math.round(distance / speed); //Formula for time in hours
+    cost = (((distance / efficiency) * cost_per_gallon) / 100); //Formula for cost
   }
-  else if (speed > 60) { // Every 1 mph over 60, take away 2 mpg
-    mpgDiff = speed - 60;
-    for (var i = 0; i <= mpgDiff; i++) {
-      efficiency -= 2;
+  else if (speed > 60) { //Every 1 mph over 60, take away 2 mpg
+    mpgDiff = speed - 60; //Find the difference between the speed and 60
+    for (var i = 0; i <= mpgDiff; i++) { //For every MPH over 60:
+      efficiency -= 2;//Remove 2 MPG
       if (efficiency <= 0) {
-        alert("This is too fast, please try again!");
+        alert("This is impossible, please try again!");//If MPG is below 0, its impossible
       }
     }
     time = Math.round(((distance / speed) * 100) / 100); // Formula for time in hours
