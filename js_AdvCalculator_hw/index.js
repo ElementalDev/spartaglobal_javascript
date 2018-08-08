@@ -8,18 +8,21 @@ do {
 function CalcMenu() {
   var option = prompt("(B)Basic | (A)Advanced | (I)BMI | (T)Trip")
 
+  option = option[0];
+  option = option.toLowerCase();
+
   //Takes the users input and directs the code to the relevant function
   switch (option) {
-    case "B":
+    case "b":
       BasicCalc()
       break;
-    case "A":
+    case "a":
       AdvCalc();
       break;
-    case "I":
+    case "i":
       BMICalc();
       break;
-    case "T":
+    case "t":
       TripCalc();
       break;
     default: alert("This is not an option. Please try again.");
@@ -177,7 +180,7 @@ function TripWorking(distance, efficiency, cost_per_gallon, speed) {
   var mpgDiff = 0.0;
 
   if(speed <= 60){
-    time = Math.round(((distance / speed) * 100) / 100); // Formula for time in hours
+    time = Math.round(distance / speed); // Formula for time in hours
     cost = ((((distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100); // Formula for cost
   }
   else if (speed > 60) { // Every 1 mph over 60, take away 2 mpg
@@ -189,13 +192,15 @@ function TripWorking(distance, efficiency, cost_per_gallon, speed) {
       }
     }
     time = Math.round(((distance / speed) * 100) / 100); // Formula for time in hours
-    cost = ((((distance / efficiency) * LTRS_IN_GLN) * cost_per_gallon) / 100); // Formula for cost
+    cost = (((distance / efficiency) * cost_per_gallon) / 100); // Formula for cost
   }
     alert("Your trip will take " + time + " hours and cost £" + cost);
 }
 
 function useAgain() {
   var choice = prompt("Would you like to use BAIT Calculator again? (y/n)");
+
+  choice = choice.toLowerCase();
 
   if (choice == "y"){
     return true;
