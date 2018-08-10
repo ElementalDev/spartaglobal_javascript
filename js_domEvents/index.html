@@ -7,7 +7,7 @@
     <title>DOM Events</title>
   </head>
   <body>
-    Dom events
+    <h1>DOM Events</h1>
     <!-- Button for example -->
     <button type="button" name="button" id="myButton">Click Me!</button>
     <!-- Form for example -->
@@ -16,5 +16,17 @@
       <input id="firstName" type="text" name="firstName" value="">
       <input type="submit" name="" value="Submit the form">
     </form>
+    <h2>Bubbling and Capturing</h2>
+
+    <div class="border" id="div1">
+      div1
+      <div class="border" id="div2">
+        div2
+        <div class="border" id="div3">
+          div3
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
