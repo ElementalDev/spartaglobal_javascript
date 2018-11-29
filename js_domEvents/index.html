@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="DOM.css">
+      <script type="text/javascript" src="DOM.js"></script>
+    <title>DOM Events</title>
+  </head>
+  <body>
+    <h1>DOM Events</h1>
+    <!-- Button for example -->
+    <button type="button" name="button" id="myButton">Click Me!</button>
+    <!-- Form for example -->
+    <form id="myForm" action="" method="get">
+      <label for="firstName">First name</label>
+      <input id="firstName" type="text" name="firstName" value="">
+      <input type="submit" name="" value="Submit the form">
+    </form>
+    <h2>Bubbling and Capturing</h2>
+
+    <div class="border" id="div1">
+      div1
+      <div class="border" id="div2">
+        div2
+        <div class="border" id="div3">
+          div3
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

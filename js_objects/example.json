@@ -1,0 +1,11 @@
+//This is an example of JSON
+
+[{
+  "compName": "Sparta Global",
+  "people":[
+      { "name": "Reece", "age": 20, "employed": "true", "friends": ["Bob", "Bill"] }
+      { "name": "Bill", "age": 50, "employed": "true", "friends": ["Reece", "Bob"] }
+      { "name": "Bob", "age": 34, "employed": "false", "friends": ["Reece", "Bill"] }
+    ],
+  "empAmount": 3000
+}]
